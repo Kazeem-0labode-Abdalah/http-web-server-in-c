@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events around the world</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <style>
+        body{
+            padding: 0px;
+            margin: 0px;
+            background-color: rgb(224, 217, 217);
+        }
+        p{
+            font-family: Rubik;
+        }
+
+        button{
+        font-family: Rubik;
+        cursor: pointer;
+        transition: 0.3s;
+        }
+
+        #parent_div{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+        .notification_div{
+            background-color: black;
+            width: 350px;
+            height: 70px;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            position: absolute;
+            bottom: -70px;
+        }
+        .notification_div p{
+            color: white;
+            margin: 5px;
+        }
+        #login_signup_div{
+            margin-top: 70px;
+            width: 350px;
+            height: auto;
+            padding: 5px;
+            background-color: white;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+        #logo_div{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+        #logo_div a{
+            width: 40px;
+            height: 40px;
+            margin-top: 10px;
+           
+            
+        }
+        #logo_div img{
+            width: inherit;
+            height: inherit;
+        }
+        #greetings_div p{
+            margin-left: 5px;
+        }
+        #greetings_div_p1{
+            font-weight: 600;
+            /* display: none; */
+            font-size: 25px;
+            margin: 0px;
+        }
+        #greetings_div_p2{
+            color: grey;
+        }
+        #login_signup_options_div{
+            background-color: rgb(224, 217, 217);
+            padding: 10px;
+            border-radius: 10px;
+            width: 90%;
+            margin-left: 2.5%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+        #login_signup_options_div button{
+            width: 30%;
+            background-color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+        }
+        .info_entering_div{
+            display: none;
+        }
+
+        .info_entering_div div{
+            /* border: 1px solid ; */
+            margin-bottom: 10px;
+            margin-top: 10px;
+       }
+       .info_entering_div div p{
+        margin-bottom: 5px;
+        margin-top: 2px;
+        margin-left: 1.5px;
+       }
+
+       .info_entering_div div input{
+        height: 30px;
+        background-color: white;
+        width: 90%;
+        margin-left: 5%;
+        border: 1px solid;
+        border-radius: 5px;
+        font-family: Rubik;
+        color: grey;
+      }
+       
+      .info_entering_div button{
+           width: 30%;
+            background-color: black;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            margin-left: 35%;
+            margin-top: 10px;
+      }
+      #outro_p{
+        text-align: center;
+        padding: 3px;
+        color: grey;
+      }
+
+      @media(max-width:500px){
+        #parent_div{
+            height: 100%;
+        }
+        #login_signup_div{
+            height: 100%;
+            width: 90%;
+            margin: 20px;
+        }
+        .notification_div{
+            width: 90%;   
+        }
+        
+      }
+      
+    </style>
+</head>
+<body>
+    <div id="parent_div">
+        <div class="notification_div">
+            <p>Enter a valid email</p>
+        </div>
+
+        <div class="notification_div">
+            <p>A user with this email already exist</p>
+        </div>
+
+        <div class="notification_div">
+            <p>Make sure you enter all the informations and try again</p>
+        </div>
+
+        <div class="notification_div">
+            <p>A user with this email already exist</p>
+        </div>
+
+        <div class="notification_div">
+            <p>Your names must not include numbers,signs or symbols</p>
+        </div>
+
+        <div class="notification_div">
+            <p>Your password must be at least 6 characters</p>
+        </div>
+
+        <div class="notification_div">
+            <p>This user does not exist</p>
+        </div>
+
+        <div class="notification_div">
+            <p>An error occured while logging you in . Kindly try again</p>
+        </div>
+
+        <div class="notification_div">
+            <p>An error occured while signing you up . Kindly try again</p>
+        </div>
+
+        <div class="notification_div">
+            <p>You have been sucessfully signed up...now login</p>
+        </div>
+
+        <div class="notification_div">
+            <p>A user with thi email/gmail already exist</p>
+        </div>
+       
+        <div id="login_signup_div">
+            <div id="logo_div"><a href=""><img src="https://img.icons8.com/?size=100&id=A4DsujzAX4rw&format=png&color=000000" alt=""></a></div>
+            <div id="greetings_div">
+            <p id="greetings_div_p1">Whats'up</p>
+            <p id="greetings_div_p2">Sign in to your account or create a new one</p>
+            </div>
+            
+            <div id="login_signup_options_div">
+                <button class="login_signup_option_button">Login</button>
+                <button class="login_signup_option_button">Sign up</button>
+            </div>
+
+            <div class="info_entering_div">
+                <div>
+                <p>Email</p>
+                <input type="email" placeholder="Enter your gmail">
+               </div>
+
+               <div>
+                <p>Password</p>
+                <input type="password" placeholder="Enter your password" >
+               </div>
+
+               <button id="login_button">Login</button>
+            </div>
+
+            <div class="info_entering_div">
+
+                <div>
+                    <p>First name</p>
+                    <input type="email" placeholder="Enter your first name">
+                   </div>
+
+                   <div>
+                    <p>Last name</p>
+                    <input type="email" placeholder="Enter your last name">
+                   </div>
+
+
+                <div>
+                <p>Email</p>
+                <input type="email" placeholder="Enter your gmail">
+               </div>
+
+               <div>
+                <p>Password</p>
+                <input type="password" placeholder="Enter your password">
+               </div>
+
+               <button id="signup_button">Sign up</button>
+            </div>
+
+            
+            <p id="outro_p">Enter the corect email and password you used to sign up</p>
+
+        </div>
+    </div>
+
+    <script>
+        const login_signup_option_button = document.getElementsByClassName("login_signup_option_button");
+        const info_entering_div =  document.getElementsByClassName("info_entering_div");
+        const outro_p = document.getElementById("outro_p");
+        const signup_button = document.getElementById("signup_button");
+        const login_button = document.getElementById("login_button")
+        const notification_div = document.getElementsByClassName("notification_div");
+        const inputs = document.querySelectorAll("#login_signup_div input")
+
+    
+        //functions
+        function notification_dropdown(index){
+            notification_div[index].style.bottom= "10px";
+            notification_div[index].style.display = "flex";
+            setTimeout(()=>{
+                notification_div[index].style.bottom= "-70px";
+                notification_div[index].style.display = "none";
+            },3500)
+        }
+
+        function client_side_email_validator(email){
+        let is_mail_valid = false;
+
+        const email_array = [...email];
+
+       for(let i = 0; i < email_array.length;i++){
+        
+        if(email_array[i] == "@" && email_array[i-1] != null ){
+            let splited_email = email.split("@")
+            if(splited_email[1] == "gmail.com" || splited_email[1] == "email.com"){
+                is_mail_valid = true
+                break;
+            }
+       }else{
+        is_mail_valid = false
+       }
+
+    }
+
+    return is_mail_valid;
+}
+
+
+function password_lenght_checker(password){
+      let password_as_array = [...password]
+      if(password_as_array.length >= 6){
+        return true;
+    }else{
+      return false;
+    }
+  }
+
+
+        //events that occurs as soon as the page loads
+        info_entering_div[0].style.display = "block";
+        login_signup_option_button[0].style.backgroundColor = "black";
+        login_signup_option_button[0].style.color = "white";
+        //end of events that occurs as soon as the page loads
+
+        login_signup_option_button[0].addEventListener("click",()=>{
+        info_entering_div[0].style.display = "block";
+        login_signup_option_button[0].style.backgroundColor = "black";
+        login_signup_option_button[0].style.color = "white";
+
+        info_entering_div[1].style.display = "none";
+        login_signup_option_button[1].style.backgroundColor = "white";
+        login_signup_option_button[1].style.color = "black";
+
+        outro_p.innerHTML = "Enter the corect email and password you used to sign up"
+        })
+
+
+        login_signup_option_button[1].addEventListener("click",()=>{
+        info_entering_div[1].style.display = "block";
+        login_signup_option_button[1].style.backgroundColor = "black";
+        login_signup_option_button[1].style.color = "white";
+
+        info_entering_div[0].style.display = "none";
+        login_signup_option_button[0].style.backgroundColor = "white";
+        login_signup_option_button[0].style.color = "black";
+
+        outro_p.innerHTML = "Dont worry you can change these information later"
+
+        })
+
+        login_button.addEventListener("click",async()=>{  
+         if ( //check to see if both inputs are entered (email and passsword)
+           inputs[0].value == "" || inputs[1].value ==""){
+                notification_dropdown(2)
+            }else if(!client_side_email_validator(String(inputs[0].value))){ //check to see if email is a valid email
+            notification_dropdown(0)
+         }else{
+            const response_of_login_attempt = await fetch("/login",{method:"POST",body:JSON.stringify({email:inputs[0].value,password:inputs[1].value}),headers:{"Content-type":"application/json"}});
+            if(response_of_login_attempt.ok){
+          const response_as_text = await response_of_login_attempt.text()
+          console.log(response_as_text);
+          if(response_as_text == "0"){
+             //try again
+             notification_dropdown(7);
+          }else if(response_as_text == "1"){
+             //user does not exist 
+             notification_dropdown(6)
+          }else if(response_as_text == "2"){
+             //user exists  
+             inputs[0].value='';
+            inputs[1].value='';
+            window.location.href="http://127.0.0.1:8080/"
+          }
+              }
+
+        }
+        })
+      
+        signup_button.addEventListener("click",async()=>{
+            if(inputs[2].value == "" || inputs[3].value =="" || inputs[4].value =="" || inputs[5].value ==""){ //check to see if all inputs are entered (first name,last name,email and passsword)
+                notification_dropdown(2)
+            }else if(/[^a-zA-Z\s]/.test(String(inputs[2].value)) || /[^a-zA-Z\s]/.test(String(inputs[3].value)) ){//check if first name and last name are just letters
+                notification_dropdown(4)
+            }else if(!client_side_email_validator(String(inputs[4].value))){ //check to see if email is a valid email
+              notification_dropdown(0)
+            } else if(!password_lenght_checker(inputs[5].value)){
+                notification_dropdown(5)
+            }else{
+                const response_of_sign_up_attempt = await fetch("/sign_up",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({firstname:inputs[2].value,lastname:inputs[3].value,email:inputs[4].value,password:inputs[5].value})});
+            
+           if(response_of_sign_up_attempt.ok){
+         const response_as_text = await response_of_sign_up_attempt.text()
+         console.log(response_as_text);
+         if(response_as_text == "3"){
+            //try again
+            notification_dropdown(8);
+         }else if(response_as_text == "4"){
+            //sign up sucessfull
+            notification_dropdown(9)
+            inputs[2].value='';
+            inputs[3].value='';
+            inputs[4].value='';
+            inputs[5].value='';
+         }else if(response_as_text == "5"){
+            //user alresdy exists  
+            notification_dropdown(10)
+         }
+             }
+
+            }
+
+        
+
+             
+            
+        })
+    </script>
+</body>
+</html>
